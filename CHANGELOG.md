@@ -1,5 +1,7 @@
 
 
+## [0.0.2](https://github.com/howsus/react-continuous-border-radius/compare/0.0.2-beta.0...0.0.2) (2024-07-19)
+
 ## [0.0.2-beta.0](https://github.com/howsus/react-continuous-border-radius/compare/0.0.1...0.0.2-beta.0) (2024-07-19)
 
 
