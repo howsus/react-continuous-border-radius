@@ -23,6 +23,7 @@ module.exports = {
     "dist/",
     ".eslintrc.cjs",
     "vite.config.ts",
+    "commitlint.config.js",
   ],
   parserOptions: {
     project,

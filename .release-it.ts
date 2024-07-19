@@ -7,12 +7,30 @@ export default {
   },
   hooks: {
     "before:init": ["git pull", "yarn lint", "yarn build"],
-    "after:bump": "npx auto-changelog -p",
   },
   github: {
     release: true,
   },
   npm: {
     publish: true,
+  },
+  plugins: {
+    "@release-it/conventional-changelog": {
+      preset: {
+        name: "conventionalcommits",
+        types: [
+          {
+            type: "feat",
+            section: "Features",
+          },
+          {
+            type: "fix",
+            section: "Bug Fixes",
+          },
+          {},
+        ],
+      },
+      infile: "CHANGELOG.md",
+    },
   },
 } satisfies Config;
