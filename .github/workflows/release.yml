@@ -1,5 +1,23 @@
 name: Release & Publish to NPM
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      version_bump:
+        type: choice
+        description: Version bump type
+        options:
+          - patch
+          - minor
+          - major
+        default: patch
+      release_type:
+        type: choice
+        description: Release type
+        options:
+          - rc
+          - beta
+          - stable
+        default: stable
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -24,7 +42,15 @@ jobs:
         run: |
           git config --global user.name "Release Workflow"
       - name: Run release
-        run: yarn release --ci
+        run: |
+          VERSION_BUMP="${{ github.event.inputs.version_bump }}"
+          RELEASE_TYPE="${{ github.event.inputs.release_type }}"
+
+          if [ "$RELEASE_TYPE" = "stable" ]; then
+            yarn release $VERSION_BUMP --ci
+          else
+            yarn release $VERSION_BUMP --preRelease=$RELEASE_TYPE --ci
+          fi
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
