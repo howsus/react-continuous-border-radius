@@ -21,8 +21,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
   },
   "publishConfig": {
     "access": "public",
