@@ -1,0 +1,6 @@
+[data-rcbr-border] {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
