@@ -40,7 +40,8 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Initialize Git user
         run: |
-          git config --global user.name "Release Workflow"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - name: Run release
         run: |
           VERSION_BUMP="${{ github.event.inputs.version_bump }}"
