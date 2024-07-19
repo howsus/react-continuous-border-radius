@@ -1,6 +1,16 @@
 {
   "name": "react-continuous-border-radius",
+  "description": "Smooth corners for your react app",
   "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/howsus/react-continuous-border-radius.git"
+  },
+  "bugs": {
+    "url": "https://github.com/howsus/react-continuous-border-radius/issues"
+  },
+  "homepage": "https://github.com/howsus/react-continuous-border-radius#readme",
   "files": [
     "dist"
   ],
@@ -72,6 +82,14 @@
       "prettier --write --ignore-unknown"
     ]
   },
+  "keywords": [
+    "react",
+    "smooth corners",
+    "border radius",
+    "continuous corners",
+    "squircle",
+    "superellipse"
+  ],
   "packageManager": "yarn@4.2.2",
   "version": "0.0.2"
 }
